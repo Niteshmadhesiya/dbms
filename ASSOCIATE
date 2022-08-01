@@ -1,0 +1,17 @@
+declare
+type marks is table of int index by varchar2(10);
+m marks;
+i varchar2(10);
+begin
+m('ab'):=10;
+m('cd'):=20;
+m('ef'):=30;
+m('gh'):=40;
+
+i:=m.first();
+while i is not null loop
+dbms_output.put_line('Marks are :'||i||m(i));
+i:=m.next(i);
+end loop;
+end;
+/
