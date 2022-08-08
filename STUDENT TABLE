@@ -1,0 +1,18 @@
+create table student(id int,Name varchar(20),Address varchar(20),age int);
+insert into student values(1,'nitesh','ganesh ngr',20);
+insert into student values(2,'vivek','palghar',19);
+insert into student values(3,'jha','dahanu',19);
+insert into student values(4,'madhesiya','virar',19);
+insert into student values(5,'arijit','virar',19);
+select * from student;
+declare
+s_ID student.ID%type:=1;
+s_Name student.Name%type;
+s_Address student.Address%type;
+s_age student.age%type;
+begin
+select Name,Address,age into s_Name,s_Address,s_age from student where ID=s_ID;
+dbms_output.put_line('student'||s_Name||s_Address||s_age);
+end;
+/
+
